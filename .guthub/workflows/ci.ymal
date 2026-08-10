@@ -32,7 +32,7 @@ jobs:
         run: echo "value=$(date +'%Y-%m-%d-%H%M%S')" >> $GITHUB_OUTPUT
         # VERSION=2025-12-11-143025
         # Image name: 
-        # mdmudsfikurrahamn/hello-world:2025-12-11-090512
+        # haridock12/hello-word:2026-08-10-090512
 
       - name: Build and push Docker image
         run: |
