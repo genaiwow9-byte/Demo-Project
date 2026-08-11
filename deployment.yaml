@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: haridock12/hello-word:2026-08-11-095530
+        image: haridock12/hello-word:2026-08-11-100144
 
         ports:
         - containerPort: 5000
