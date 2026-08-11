@@ -1,0 +1,50 @@
+#######DEPLOYMENT.YAML#########
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-word
+  namespace: default          # <-- added
+  labels:
+    app: hello-word
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-word
+  template:
+    metadata:
+      labels:
+        app: hello-word
+    spec:
+      containers:
+      - name: flask
+        image: haridock12/hello-word:2026-08-10-164107
+
+        ports:
+        - containerPort: 5000
+
+
+
+
+---
+
+
+
+##########SERVICE.YAML#########
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-word-service
+  namespace: default          # <-- added
+  labels:
+    app: hello-word
+    release: prometheus
+spec:
+  selector:
+    app: hello-word
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
