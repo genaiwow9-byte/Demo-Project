@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com:genaiwow9-byte/Demo-Project.git
+    repoURL: https://github.com/genaiwow9-byte/Demo-Project.git
     targetRevision: main
     path: .
   destination:
